@@ -32,29 +32,6 @@
 </div>
 
 <script>
-    const title = document.querySelector('#title');
-    const slug = document.querySelector('#slug')
-
-    title.addEventListener('change', function(){
-        const inputValue = title.value.trim(); // Trim any leading or trailing spaces
-
-    if (inputValue === "") {
-        // If the title is blank, you may choose to handle this differently, e.g., set a default value for the slug.
-        // For now, let's assume you want to set the slug to an empty string when title is blank.
-        slug.value = "";
-        } 
-        else {
-            // If title is not blank, make the fetch request and update the slug based on the response.
-            fetch('/dashboard/posts/checkSlug?title=' + inputValue)
-                .then(response => response.json())
-                .then(data => slug.value = data.slug);
-        }
-    })
-
-    document.addEventListener('trix-file-accept', function(e){
-        e.preventDefault();
-    })
-
     function previewImage(){
         const image = document.querySelector('#image')
         const imgPreview = document.querySelector('.img-preview')

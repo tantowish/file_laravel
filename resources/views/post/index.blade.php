@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="p-8 lg:px-32 mx-auto">
+        <div class="py-8">
+            <p class="text-center text-3xl">Tap Card to Edit</p>
+        </div>
         @if (session('success'))
             {{ session('success') }}
         @endif
@@ -14,7 +17,7 @@
         @foreach ($posts as $post)
         <a href="{{ route('post.edit', $post->id) }}" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
             @if ($post->photo)
-            <img class="object-cover w-full rounded-t-lg h-48 md:h-auto md:w-36 md:rounded-none md:rounded-l-lg" src="storage/{{  $post->photo  }}" alt="">
+            <img class="object-cover w-full rounded-t-lg h-48 md:h-auto md:w-36 md:rounded-none md:rounded-l-lg" src="{{ asset('storage/img/square/'. $post->photo) }}" alt="">
             @else
             <p class="px-8">Tidak ada photo</p>
             @endif

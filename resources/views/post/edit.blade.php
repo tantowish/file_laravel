@@ -23,7 +23,7 @@
             <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload Image</label>
             <input type="hidden" name="oldImage" value="{{ $post->photo }}">
             @if ($post->photo)
-            <img src="{{ asset('storage/'.$post->photo) }}" class="img-preview max-h-[300px] mb-5">
+            <img src="{{ asset('storage/img/original/'.$post->photo) }}" class="img-preview max-h-[300px] mb-5">
             @else
             <img class="img-preview max-h-[300px] mb-5">
             @endif
