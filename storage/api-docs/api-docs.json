@@ -14,6 +14,21 @@
         "version": "0.0.1"
     },
     "paths": {
+        "/api/gallery": {
+            "get": {
+                "tags": [
+                    "gallery"
+                ],
+                "summary": "Returns a list of gallery items",
+                "description": "Get a list of all gallery items",
+                "operationId": "gallery",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
         "/api/greet": {
             "get": {
                 "tags": [
