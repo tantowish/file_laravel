@@ -27,4 +27,15 @@ class GalleryController extends Controller
         $posts = Post::all();
         return GalleryResource::collection($posts);
     }
+
+    public function store(Request $request){
+        $validatedData = $request->validate([
+            "title"=> "required",
+            "body"=> "required",
+            "image" => "required",
+        ]);
+    
+        Post::create($validatedData);
+        return new GalleryResource($validatedData);
+    }
 }

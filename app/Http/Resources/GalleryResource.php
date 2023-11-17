@@ -16,7 +16,8 @@ class GalleryResource extends JsonResource
     {
         return [
             'id'=>$this->id,
-            'title'=>$this->toArray,
+            'title'=>$this->title,
+            'body'=> $this->body,
             'photo'=> $this->photo,
             'created_at'=>$this->created_at,
             'updated_at'=>$this->updated_at,
