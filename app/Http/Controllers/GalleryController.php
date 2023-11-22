@@ -32,7 +32,7 @@ class GalleryController extends Controller
         $validatedData = $request->validate([
             "title"=> "required",
             "body"=> "required",
-            "image" => "required",
+            "photo" => "required",
         ]);
     
         Post::create($validatedData);

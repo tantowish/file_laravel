@@ -22,6 +22,6 @@ use App\Http\Controllers\GalleryController;
 // });
 
 Route::get('/info', [InfoController::class, 'index'])->name('info');
-Route::get('/greet', [GreetController::class,'greet'])->name('greet');
-Route::get('/gallery', [GalleryController::class,'index'])->name('gallery.index');
-Route::post('/gallery', [GalleryController::class,'store'])->name('gallery.store    ');
+Route::get('/greet', [GreetController::class, 'greet'])->name('greet');
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+Route::post('/gallery/post', [GalleryController::class, 'store'])->name('gallery.store');

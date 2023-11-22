@@ -99,15 +99,15 @@ class PostController extends Controller
             "photo"=>$validatedData['photo'],
         ];
         // dd($store);
-        $response = Http::post('http://127.0.0.1:9000/api/gallery', $store);
+        $response = Http::post('http://127.0.0.1:9000/api/gallery/post', $store);
 
-        if ($response->successful()) {
-            return redirect('/')->with('success', 'New post has been added!');
-        } else {
-            $errorResponse = $response->json(); // Assuming the error is in JSON format
-            $errorMessage = isset($errorResponse['message']) ? $errorResponse['message'] : 'Unknown error';
-            return redirect()->back()->with('error', 'Error adding post: ' . $errorMessage);
-        }
+        // if ($response->successful()) {
+        return redirect()->route('post.index')->with('success', 'New post has been added!');
+        // } else {
+        //     $errorResponse = $response->json(); // Assuming the error is in JSON format
+        //     $errorMessage = isset($errorResponse['message']) ? $errorResponse['message'] : 'Unknown error';
+        //     return redirect()->back()->with('error', 'Error adding post: ' . $errorMessage);
+        // }
     }
 
     public function edit($id){
